@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="w-full bg-[#190960] shadow-md px-6 md:px-10 py-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <div class="flex-1 flex justify-center text-lg md:text-xl font-semibold space-x-6 md:space-x-16">
+            <a href="#" class="text-white hover:text-blue-300">Home</a>
+            <a href="#" class="text-white hover:text-blue-300">Courses</a>
+            <a href="#" class="text-white hover:text-blue-300">About Us</a>
+        </div>
+        <div class="flex items-center space-x-3 md:space-x-4">
+            <img src="logo.png" alt="Logo" class="h-8 md:h-10">
+        </div>
+    </nav>
+    
+    <div class="flex flex-col md:flex-row h-auto md:h-screen pt-16">
+        <aside class="w-full md:w-1/4 bg-[#190960] text-white p-6 flex flex-col items-center h-auto md:h-full">
+            <img src="profile-placeholder.png" alt="Profile" class="w-24 h-24 rounded-full border-2 border-white">
+            <h2 class="mt-3 font-bold text-xl">Lorem Lepsum</h2>
+            <p class="text-md md:text-lg">loremlepsum2234@gmail.com</p>
+            <p class="text-md md:text-lg">2021-16613-MN-0</p>
+            <nav class="w-full mt-6 space-y-3 md:space-y-5 flex flex-col items-center">
+                <a href="#" class="text-lg hover:text-gray-300 flex items-center"><img src="icon-profile.png" alt="Profile Icon" class="h-5 w-5 mr-2"> Profile</a>
+                <a href="#" class="text-lg hover:text-gray-300 flex items-center"><img src="icon-certificates.png" alt="Certificates Icon" class="h-5 w-5 mr-2"> Certificates</a>
+                <a href="#" class="text-lg hover:text-gray-300 flex items-center"><img src="icon-centers.png" alt="Centers Icon" class="h-5 w-5 mr-2"> Centers Attended</a>
+                <a href="#" class="text-lg hover:text-gray-300 flex items-center"><img src="icon-feedbacks.png" alt="Feedbacks Icon" class="h-5 w-5 mr-2"> Your Feedbacks</a>
+            </nav>
+            <div class="mt-auto pt-6">
+                <a href="#" class="text-white hover:text-blue-300 text-sm md:text-lg">Logout</a>
+            </div>
+        </aside>
+
+        <main class="w-full md:w-3/4 p-6 md:p-10 bg-white shadow-lg">
+            <header class="flex flex-col md:flex-row justify-between items-center border-b pb-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-[#190960]">Student Profile</h1>
+                <button id="edit-btn" class="bg-[#3DC2EC] border border-blue-500 text-white px-3 py-2 md:px-4 md:py-2 rounded-md hover:bg-blue-500 hover:text-white text-sm md:text-lg mt-3 md:mt-0" onclick="toggleEdit()">Edit Profile</button>
+            </header>
+
+            <section class="mt-6 text-gray-700 text-lg space-y-6">
+                <div class="grid gap-6 md:gap-8">
+                    <div class="grid grid-cols-4 gap-6">
+                        <p><strong class="text-[#190960] text-3xl">First Name:</strong> <input type="text" value="Lorem" disabled class="bg-transparent border-none outline-none editable"></p>
+                        <p><strong class="text-[#190960] text-3xl">Last Name:</strong> <input type="text" value="Dolor" disabled class="bg-transparent border-none outline-none editable"></p>
+                        <p><strong class="text-[#190960] text-3xl">Middle Name:</strong> <input type="text" value="Ipsum" disabled class="bg-transparent border-none outline-none editable"></p>
+                    </div>
+                    <div>
+                        <p><strong class="text-[#190960] text-3xl">Gender:</strong></p>
+                        <input type="text" value="Female" disabled class="bg-transparent border-none outline-none editable">
+                    </div>
+                    <div class="grid grid-cols-4 gap-6">
+                        <p><strong class="text-[#190960] text-3xl">Date of Birth:</strong> <input type="text" value="01/02/2025" disabled class="bg-transparent border-none outline-none editable"></p>
+                    </div>
+                    <div>
+                        <p><strong class="text-[#190960] text-3xl">Section:</strong></p>
+                        <input type="text" value="DIT 3-1" disabled class="bg-transparent border-none outline-none editable">
+                    </div>
+                    <div class="grid grid-cols-1 gap-2">
+                        <p><strong class="text-[#190960] text-3xl">Address:</strong></p>
+                        <p><strong class="text-[#190960] text-xl">Street:</strong> <input type="text" value="123 Tutuban St." disabled class="bg-transparent border-none outline-none editable"></p>
+                        <p><strong class="text-[#190960] text-xl">City:</strong> <input type="text" value="Manila" disabled class="bg-transparent border-none outline-none editable"></p>
+                        <p><strong class="text-[#190960] text-xl">Province:</strong> <input type="text" value="Manila" disabled class="bg-transparent border-none outline-none editable"></p>
+                    </div>
+                    <p class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0">
+                        <strong class="text-[#190960] text-3xl">Course:</strong> 
+                        <input type="text" value="Bachelor of Science in Information Technology" disabled class="bg-transparent border-none outline-none editable w-full">
+                    </p>  
+                    <div class="mt-6">
+                        <p class="text-[#190960] text-3xl font-bold">Current TESDA Course:</p>
+                        <p class="text-lg font-semibold">Computer System Servicing NC II</p>
+                    
+                        <p class="mt-3 text-[#190960] text-3xl font-bold">Date Started:</p>
+                        <div class="flex gap-6">
+                            <span class="text-lg font-semibold">01/2/2025</span>
+                            <span class="text-lg font-semibold">03/2/2025</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleEdit() {
+            let inputs = document.querySelectorAll('.editable');
+            let button = document.getElementById('edit-btn');
+            
+            if (button.innerText === "Edit Profile") {
+                inputs.forEach(input => {
+                    input.removeAttribute('disabled');
+                    input.classList.add('shadow-md', 'border', 'border-gray-400', 'p-1');
+                });
+                button.innerText = "Save Changes";
+                button.classList.replace('bg-[#3DC2EC]', 'bg-green-500');
+            } else {
+                inputs.forEach(input => {
+                    input.setAttribute('disabled', true);
+                    input.classList.remove('shadow-md', 'border', 'border-gray-400', 'p-1');
+                });
+                button.innerText = "Edit Profile";
+                button.classList.replace('bg-green-500', 'bg-[#3DC2EC]');
+            }
+        }
+    </script>
+</body>
+</html>
